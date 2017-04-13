@@ -1,0 +1,20 @@
+{
+  "name": "nunjucks-bootstrap-kickstarter",
+  "version": "1.0.0",
+  "authors": [
+    "Niklaus Hug <biz@niklaushug.ch>"
+  ],
+  "license": "MIT",
+  "homepage": "http://niklaushug.ch/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.7",
+    "font-awesome": "~4.7.0"
+  }
+}

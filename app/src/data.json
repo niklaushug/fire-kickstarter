@@ -1,0 +1,21 @@
+{
+  "page_title": "Kickstarter",
+  "navigation" : [
+    {
+      "label" : "Home",
+      "relative_path": "index.html"
+    },
+    {
+      "label" : "Page 1",
+      "relative_path": "page_1.html"
+    },
+    {
+      "label" : "Page 2",
+      "relative_path": "page_2.html"
+    },
+    {
+      "label" : "Page 3",
+      "relative_path": "page_3.html"
+    }
+  ]
+}

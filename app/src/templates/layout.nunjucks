@@ -1,0 +1,21 @@
+<!-- layout.nunjucks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ data.page_title }}</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    {% include "partials/navigation.nunjucks" %}
+
+    <div class="container">
+    {% block content %} {% endblock %}
+    </div>
+    <script src="js/all.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

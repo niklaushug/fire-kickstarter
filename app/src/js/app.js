@@ -16,8 +16,6 @@ let xAxis = d3.scaleTime().rangeRound([0, width]),
     xBar = d3.scaleBand().range([0, width]).padding(0.1),
     yAxis = d3.scaleLinear().rangeRound([height, 0]);
 
-console.log(height);
-
 const area = d3.area()
     .x((d) => {return xAxis(d.time)})
     .y1((d) => {return yAxis(d.price)});

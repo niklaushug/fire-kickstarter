@@ -218,7 +218,6 @@ h1 small {
     height: 0;
     padding-top: 48%;  // TODO set value according graph's aspect ratio
     position: relative;
-    margin: 40px 0;  // TODO correctly
 
     svg {
         position: absolute;
@@ -234,6 +233,10 @@ h1 small {
     .axis {
         text-anchor: middle;
         fill: none;
+
+        .domain {
+            display: none;
+        }
 
         .tick {
             line {

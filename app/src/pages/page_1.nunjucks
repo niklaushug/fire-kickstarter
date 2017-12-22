@@ -1,5 +1,9 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
+    <div class="chart-wrapper">
+        <svg class="chart" width="960" height="500" viewBox="0 0 960 500">
 
+        </svg>
+    </div>
 {% endblock %}

@@ -1,0 +1,22 @@
+{% macro badgePercentage(value='0', positiveTendency=true) %}
+    <span class="badge badge-pill badge-secondary
+        {% if positiveTendency %}
+          tendency-positive
+        {% else %}
+          tendency-negative
+        {% endif %}
+    "><i class="fa
+        {% if positiveTendency %}
+          fa-caret-up
+        {% else %}
+          fa-caret-down
+        {% endif %}
+    "></i> {{value}} %</span>
+{% endmacro %}
+
+{% macro iconOnDisc(icon1='fa-question', icon2='fa-circle') %}
+    <span class="fa-stack fa-lg">
+        <i class="fa {{ icon2 }} bg-for-{{ icon1 }} fa-stack-2x"></i>
+        <i class="fa {{ icon1 }} fa-stack-1x"></i>
+    </span>
+{% endmacro %}

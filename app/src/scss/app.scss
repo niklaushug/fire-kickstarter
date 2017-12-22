@@ -1,6 +1,62 @@
 @import '../../../node_modules/bootstrap/scss/_functions.scss';
+
+$text-color-primary: rgba(45, 75, 80, 1);
+$text-color-secondary: rgba(145, 170, 170, 1);
+$text-color-inverse: #fff;
+$icon-color-base: rgba(211, 221, 221, 1);
+$icon-color-bitcoin: rgba(107, 207, 82, 1);
+$icon-color-reddit: rgba(233, 64, 51, 1);
+$icon-color-rss: rgba(241, 152, 51, 1);
+$accent-color-base: rgba(98, 209, 206, 1);
+$accent-color-darker: rgba(36, 89, 99, 1); // header line
+$accent-color-dark: rgba(79, 171, 170, 1); // graph bar border
+$accent-color-light: rgba(215, 246, 245, 1);
+$tendency-color-negative: rgba(229, 88, 88, 1);
+$tendency-color-positive: rgba(98, 209, 206, 1);
+$bg-color-primary: rgba(255, 255, 255, 1);
+$bg-color-secondary: rgba(248, 249, 249, 1);
+$bg-color-third: rgba(241, 243, 243, 1);
+
 @import 'bootstrap-variables-v4_0_0-beta_2.scss';
 @import 'font-awesome-variables-v4_7_0.scss';
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../../bower_components/font-awesome/scss/font-awesome.scss';
 
+
+
+/* icon */
+.fa-stack {
+    .fa-circle + .fa-stack-1x {
+        color: $text-color-inverse;
+    }
+
+    .bg-for-fa-rss {
+        color: $icon-color-rss;
+    }
+
+    .bg-for-fa-reddit-alien {
+        color: $icon-color-reddit;
+    }
+
+    .bg-for-fa-btc {
+        color: $icon-color-bitcoin;
+    }
+}
+
+/* badge */
+.badge {
+    &.tendency-positive {
+        color: $tendency-color-positive;
+    }
+
+    &.tendency-negative {
+        color: $tendency-color-negative;
+    }
+}
+
+/* header */
+header {
+    h1 {
+        display: inline;
+    }
+}

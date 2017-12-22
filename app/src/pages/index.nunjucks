@@ -1,5 +1,123 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-test 2
+<article class="container">
+    <header class="row">
+        <div class="col">
+            {{ fireMacro.iconOnDisc(icon1='fa-btc') }}
+            <h1>Bitcoin Cash<small>BCH</small></h1>
+            <span>$3,416.71</span> {{ fireMacro.badgePercentage(value='2.31', positiveTendency=false) }}
+        </div>
+    </header>
+    <div class="row">
+        <div class="col">
+            <span>$ 290.75 B</span>
+            <span>Market Cap</span> {{ fireMacro.badgePercentage(value='1.39', positiveTendency=true) }}
+        </div>
+        <div class="col">
+            <span>$ 15,414 - $ 18,411</span>
+            <span>Low - High 24H</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+        </div>
+        <div class="col">
+            <span>$ 10.81 B</span>
+            <span>Volume 24 H</span> {{ fireMacro.badgePercentage(value='0.47', positiveTendency=false) }}
+        </div>
+        <div class="col">
+            <span>16.75 M - 21.30 M</span>
+            <span>Current Max Supply</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+        </div>
+    </div>
+    <div class="row">
+        Diagram
+    </div>
+    <div class="row">
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#information" aria-controls="information" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-thumb-tack') }} Information</a>
+                </li>
+                <li role="presentation">
+                    <a href="#social-media" aria-controls="social-media" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-share-alt') }} Social Media</a>
+                </li>
+                <li role="presentation">
+                    <a href="#historical-data" aria-controls="historical-data" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-line-chart') }} Historical Data</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="information">
+                    <div class="row">
+                        <div class="col">
+                            <span>3</span>
+                            <span>Ranking</span>
+                        </div>
+                        <div class="col">
+                            <a href="bitcoincash.org" alt="bitcoincash.org">bitcoincash.org</a>
+                            <span>Algorithm</span>
+                        </div>
+                        <div class="col">
+                            {{ fireMacro.iconOnDisc(icon1='fa-info', icon2='fa-circle-thin') }}
+                            <span>Etash</span>
+                            <span>Algorithm</span>
+                        </div>
+                        <div class="col">TODO insert text</div>
+                        <div class="col">TODO insert text</div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="social-media">social-media</div>
+                <div role="tabpanel" class="tab-pane" id="historical-data">historical-data</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <div class="row">
+                            <div class="col">
+                                {{ fireMacro.iconOnDisc(icon1='fa-reddit-alien') }}
+                                {{ fireMacro.iconOnDisc(icon1='fa-rss') }}
+                            </div>
+                            <div class="col">
+                                <strong>LOL Roger just planted the fear seed in the heart of every BTS holder!</strong>
+                                <i class="fa fa-clock-o"></i> <span>15 Minutes ago</span>
+                                <i class="fa fa-comment"></i> <span>173 Comments</span>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-primary">Bitcon Cash</button>
+                            </div>
+                            <div class="col">
+                                <a href="/">Visit Site <i class="fa fa-share"></i></a>
+                            </div>
+                            <div class="col">
+                                <span data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fa fa-angle-down"></i></span>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Collapsible Group Item #2
+                </a>
+              </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 {% endblock %}

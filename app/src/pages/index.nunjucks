@@ -28,7 +28,47 @@
         </div>
     </div>
     <div class="row">
-        Diagram
+        <div class="chart-wrapper">
+            <svg class="chart" viewBox="0 0 960 500">
+                <g class="axis axis--x" transform="translate(0,450)">
+                    <g class="tick" opacity="1" transform="translate(25.5,0)">
+                        <line y2="6"></line>
+                        <text y="9" dy="0.71em">A</text>
+                    </g>
+                    <g class="tick" opacity="1" transform="translate(59.5,0)">
+                        <line y2="6"></line>
+                        <text y="9" dy="0.71em">B</text>
+                    </g>
+                    <g class="tick" opacity="1" transform="translate(93.5,0)">
+                        <line y2="6"></line>
+                        <text y="9" dy="0.71em">C</text>
+                    </g>
+                    <g class="tick" opacity="1" transform="translate(127.5,0)">
+                        <line y2="6"></line>
+                        <text y="9" dy="0.71em">D</text>
+                    </g>
+                    <g class="tick" opacity="1" transform="translate(161.5,0)">
+                        <line y2="6"></line>
+                        <text y="9" dy="0.71em">E</text>
+                    </g>
+                </g>
+
+                <path class="steamgraph" d="M890 440 L10 440 L10 10 L 200 400 L 400 200 L 600 300 L 800 100 L 890 350 Z" stroke="black" />
+
+                <g class="grid">
+                    <line x1="0" y1="100" x2="960" y2="100"/>
+                    <text x="900" y="100" text-anchor="end">$ 3,900.00</text>
+                </g>
+
+                <g class="bar">
+                    <rect x="10" y="161" width="31" height="289"></rect>
+                    <rect x="44" y="397" width="31" height="53"></rect>
+                    <rect x="78" y="351" width="31" height="99"></rect>
+                    <rect x="112" y="299" width="31" height="151"></rect>
+                    <rect x="146" y="0" width="31" height="450"></rect>
+                </g>
+            </svg>
+        </div>
     </div>
     <div class="row">
         <div>

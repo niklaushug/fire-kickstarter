@@ -1,11 +1,12 @@
 {
   "name": "nunjucks-bootstrap-kickstarter",
-  "version": "1.0.0",
+  "description": "Nunjucks Browsersync Gulp kickstarter for experimenting with Bootstrap, SCSS and ES6",
+  "main": "gulpfile.js",
   "authors": [
     "Niklaus Hug <biz@niklaushug.ch>"
   ],
   "license": "MIT",
-  "homepage": "http://niklaushug.ch/",
+  "homepage": "https://github.com/niklaushug/nunjucks-bootstrap-kickstarter",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "~3.3.7",
     "font-awesome": "~4.7.0"
   }
 }

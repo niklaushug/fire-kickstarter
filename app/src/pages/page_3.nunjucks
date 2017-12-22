@@ -1,5 +1,5 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-
+    <img style="width: 1200px;" src="img/fire-screenshot.png" alt="Fire Screenshot">
 {% endblock %}

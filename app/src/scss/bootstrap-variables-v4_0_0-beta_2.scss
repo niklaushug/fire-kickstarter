@@ -185,7 +185,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$grid-gutter-width:           15px !default;
 
 // Components
 //
@@ -197,7 +197,7 @@ $line-height-sm:              1.5 !default;
 $border-width:                1px !default;
 $border-color:                $gray-200 !default;
 
-$border-radius:               .25rem !default;
+$border-radius:               2px !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
 
@@ -221,7 +221,7 @@ $font-family-monospace:       "SFMono-Regular", Menlo, Monaco, Consolas, "Libera
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              .5rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                ($font-size-base * 1.25) !default;
 $font-size-sm:                ($font-size-base * .875) !default;
 
@@ -232,7 +232,7 @@ $font-weight-bold:            700 !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                $font-size-base * 2.625 !default;
 $h2-font-size:                $font-size-base * 2 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
@@ -530,9 +530,9 @@ $nav-tabs-link-active-color:        $gray-700 !default;
 $nav-tabs-link-active-bg:           $body-bg !default;
 $nav-tabs-link-active-border-color: #ddd !default;
 
-$nav-pills-border-radius:           $border-radius !default;
-$nav-pills-link-active-color:       $component-active-color !default;
-$nav-pills-link-active-bg:          $component-active-bg !default;
+$nav-pills-border-radius:           0 !default;
+$nav-pills-link-active-color:       $text-color-primary !default;
+$nav-pills-link-active-bg:          $bg-color-secondary !default;
 
 // Navbar
 
@@ -661,10 +661,10 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default
 
 // Badges
 
-$badge-font-size:                   75% !default;
+$badge-font-size:                   100% !default;
 $badge-font-weight:                 $font-weight-normal !default;
-$badge-padding-y:                   .25em !default;
-$badge-padding-x:                   .4em !default;
+$badge-padding-y:                   0.7em !default;
+$badge-padding-x:                   1em !default;
 $badge-border-radius:               $border-radius !default;
 
 $badge-pill-padding-x:              .6em !default;

@@ -4,27 +4,35 @@
 <article class="container">
     <header class="row">
         <div class="col">
-            {{ fireMacro.iconOnDisc(icon1='fa-btc') }}
+            {{ fireMacro.iconOnDisc(icon1='fa-btc', faSize='fa-3x') }}
             <h1>Bitcoin Cash<small>BCH</small></h1>
-            <span>$3,416.71</span> {{ fireMacro.badgePercentage(value='2.31', positiveTendency=false) }}
+            <span class="h1 font-weight-light">$ 3,416.71</span> {{ fireMacro.badgePercentage(value='2.31', positiveTendency=false) }}
         </div>
     </header>
-    <div class="row">
+    <div class="row tiles tiles--secondary">
         <div class="col">
-            <span>$ 290.75 B</span>
-            <span>Market Cap</span> {{ fireMacro.badgePercentage(value='1.39', positiveTendency=true) }}
+            <div>
+                <span class="title">$ 290.75 B</span>
+                <span class="byline">Market Cap</span> {{ fireMacro.badgePercentage(value='1.39', positiveTendency=true) }}
+            </div>
         </div>
         <div class="col">
-            <span>$ 15,414 - $ 18,411</span>
-            <span>Low - High 24H</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+            <div>
+                <span class="title">$ 15,414 - $ 18,411</span>
+                <span class="byline">Low - High 24H</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+            </div>
         </div>
         <div class="col">
-            <span>$ 10.81 B</span>
-            <span>Volume 24 H</span> {{ fireMacro.badgePercentage(value='0.47', positiveTendency=false) }}
+            <div>
+                <span class="title">$ 10.81 B</span>
+                <span class="byline">Volume 24 H</span> {{ fireMacro.badgePercentage(value='0.47', positiveTendency=false) }}
+            </div>
         </div>
         <div class="col">
-            <span>16.75 M - 21.30 M</span>
-            <span>Current Max Supply</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+            <div>
+                <span class="title">16.75 M - 21.30 M</span>
+                <span class="byline">Current Max Supply</span> {{ fireMacro.badgePercentage(value='4.57', positiveTendency=true) }}
+            </div>
         </div>
     </div>
     <div class="row">
@@ -70,94 +78,149 @@
             </svg>
         </div>
     </div>
-    <div class="row">
-        <div>
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#information" aria-controls="information" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-thumb-tack') }} Information</a>
+
+    <aside>
+        <div class="chart-tabs">
+            <ul class="nav nav-pills" id="chartTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="true">{{ fireMacro.iconOnDisc(icon1='fa-thumb-tack') }} Information</a>
                 </li>
-                <li role="presentation">
-                    <a href="#social-media" aria-controls="social-media" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-share-alt') }} Social Media</a>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="social-media-tab" data-toggle="tab" href="#social-media" role="tab" aria-controls="social-media" aria-selected="false">{{ fireMacro.iconOnDisc(icon1='fa-share-alt') }} Social Media</a>
                 </li>
-                <li role="presentation">
-                    <a href="#historical-data" aria-controls="historical-data" role="tab" data-toggle="tab">{{ fireMacro.iconOnDisc(icon1='fa-line-chart') }} Historical Data</a>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="historical-data-tab" data-toggle="tab" href="#historical-data" role="tab" aria-controls="historical-data" aria-selected="false">{{ fireMacro.iconOnDisc(icon1='fa-line-chart') }} Historical Data</a>
                 </li>
             </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="information">
-                    <div class="row">
-                        <div class="col">
-                            <span>3</span>
-                            <span>Ranking</span>
+
+            <div class="chart-tabs__content full-width">
+                <div class="container">
+                    <div class="tab-content" id="chartTabContent">
+                        <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="information-tab">
+                            <div class="row tiles tiles--primary">
+                                <div class="col">
+                                    <div class="tiles--ranking">
+                                        <span class="title">3</span>
+                                        <span class="byline">Ranking</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <a href="bitcoincash.org" class="title" alt="bitcoincash.org">bitcoincash.org</a>
+                                        <span class="byline">Algorithm</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        {{ fireMacro.iconOnDisc(icon1='fa-info', icon2='fa-circle-thin') }}
+                                        <span class="title">Etash</span>
+                                        <span class="byline">Algorithm</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        {{ fireMacro.iconOnDisc(icon1='fa-info', icon2='fa-circle-thin') }}
+                                        <span class="title">Proof</span>
+                                        <span class="byline">PoW</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        {{ fireMacro.iconOnDisc(icon1='fa-info', icon2='fa-circle-thin') }}
+                                        <span class="title">No</span>
+                                        <span class="byline">Premined</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="bitcoincash.org" alt="bitcoincash.org">bitcoincash.org</a>
-                            <span>Algorithm</span>
-                        </div>
-                        <div class="col">
-                            {{ fireMacro.iconOnDisc(icon1='fa-info', icon2='fa-circle-thin') }}
-                            <span>Etash</span>
-                            <span>Algorithm</span>
-                        </div>
-                        <div class="col">TODO insert text</div>
-                        <div class="col">TODO insert text</div>
+
+                        <div class="tab-pane fade" id="social-media" role="tabpanel" aria-labelledby="social-media-tab">social-media</div>
+
+                        <div class="tab-pane fade" id="historical-data" role="tabpanel" aria-labelledby="historical-data-tab">historical-data</div>
                     </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="social-media">social-media</div>
-                <div role="tabpanel" class="tab-pane" id="historical-data">historical-data</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                        <div class="row">
-                            <div class="col">
-                                {{ fireMacro.iconOnDisc(icon1='fa-reddit-alien') }}
-                                {{ fireMacro.iconOnDisc(icon1='fa-rss') }}
-                            </div>
-                            <div class="col">
-                                <strong>LOL Roger just planted the fear seed in the heart of every BTS holder!</strong>
-                                <i class="fa fa-clock-o"></i> <span>15 Minutes ago</span>
-                                <i class="fa fa-comment"></i> <span>173 Comments</span>
-                            </div>
-                            <div class="col">
-                                <button type="button" class="btn btn-primary">Bitcon Cash</button>
-                            </div>
-                            <div class="col">
-                                <a href="/">Visit Site <i class="fa fa-share"></i></a>
-                            </div>
-                            <div class="col">
-                                <span data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fa fa-angle-down"></i></span>
-                            </div>
-                        </div>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collapsible Group Item #2
-                </a>
-              </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="chart-social full-width">
+            <div class="container">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <span class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                <div class="row">
+                                    <div class="col">
+                                        {{ fireMacro.iconOnDisc(icon1='fa-reddit-alien', faSize='fa-2x') }}
+                                    </div>
+                                    <div class="col message">
+                                        <strong>LOL Roger just planted the fear seed in the heart of every BTS holder!</strong><br>
+                                        <i class="fa fa-clock-o"></i> <span>15 Minutes ago</span>
+                                        <i class="fa fa-comment"></i> <span>173 Comments</span>
+                                    </div>
+                                    <div class="col buttons">
+                                        <button type="button" class="btn btn-primary">Bitcon Cash</button>
+                                    </div>
+                                    <div class="col link">
+                                        <a href="/">Visit Site <i class="fa fa-share"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <span><i class="fa fa-angle-down"></i></span>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div id="collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body row">
+                                <div class="col">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo magni, repellat necessitatibus, consequatur eaque quis omnis et itaque asperiores excepturi, cumque libero veritatis nemo voluptas culpa fugiat ea quo eos?</p>
+                                    <p>Recusandae rem necessitatibus, labore eum ratione eveniet velit aut suscipit, odit maxime expedita illo dignissimos doloribus excepturi omnis vitae voluptate earum, perspiciatis. Reprehenderit, hic similique distinctio nesciunt odio magni a?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <span class="panel-title" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <div class="row">
+                                    <div class="col">
+                                        {{ fireMacro.iconOnDisc(icon1='fa-rss', faSize='fa-2x') }}
+                                    </div>
+                                    <div class="col message">
+                                        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores mollitia recusandae ea nostrum voluptatem eveniet! Doloremque veritatis explicabo laudantium ipsa, harum odit dolor maiores, labore fugiat nemo, id mollitia debitis!</strong><br>
+                                        <i class="fa fa-clock-o"></i> <span>15 Minutes ago</span>
+                                        <i class="fa fa-comment"></i> <span>173 Comments</span>
+                                    </div>
+                                    <div class="col buttons">
+                                        <button type="button" class="btn btn-primary">Bitcon Cash</button>
+                                        <button type="button" class="btn btn-primary">Bitcon</button>
+                                    </div>
+                                    <div class="col link">
+                                        <a href="/">Visit Site <i class="fa fa-share"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <span><i class="fa fa-angle-down"></i></span>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body row">
+                                <div class="col">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint quis, rerum, nihil vero excepturi asperiores voluptatem sit pariatur, neque dolorum alias. Adipisci incidunt ullam voluptatibus eum aliquam quasi nostrum, placeat!</p>
+                                    <p>Exercitationem facere tempore quisquam quaerat, tempora repellendus sint nemo eius expedita qui culpa dicta libero ipsa reiciendis aperiam ea doloremque quia magnam accusantium atque harum dignissimos, id laudantium excepturi vel.</p>
+                                    <p>A sequi qui, quod ipsum modi repudiandae doloremque ab consequatur numquam iusto laborum vitae nulla voluptates, rem esse earum iure voluptatum debitis odit dignissimos eos illo. Quo facilis, consectetur nulla?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
 </article>
 {% endblock %}

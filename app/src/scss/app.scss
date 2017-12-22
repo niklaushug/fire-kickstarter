@@ -2,7 +2,7 @@
 
 $text-color-primary: rgba(45, 75, 80, 1);
 $text-color-secondary: rgba(145, 170, 170, 1);
-$text-color-inverse: #fff;
+$text-color-inverse: rgba(255, 255, 255, 1);
 $icon-color-base: rgba(211, 221, 221, 1);
 $icon-color-bitcoin: rgba(107, 207, 82, 1);
 $icon-color-reddit: rgba(233, 64, 51, 1);
@@ -14,15 +14,168 @@ $accent-color-light: rgba(215, 246, 245, 1); // steamgraph filling
 $tendency-color-negative: rgba(229, 88, 88, 1);
 $tendency-color-positive: rgba(98, 209, 206, 1);
 $bg-color-primary: rgba(255, 255, 255, 1);
-$bg-color-secondary: rgba(248, 249, 249, 1);
-$bg-color-third: rgba(241, 243, 243, 1);
+$bg-color-secondary: darken(rgba(248, 249, 249, 1), 0%);  // TODO remove darken
+$bg-color-third: darken(rgba(241, 243, 243, 1), 0%);  // TODO remove darken
 
 @import 'bootstrap-variables-v4_0_0-beta_2.scss';
 @import 'font-awesome-variables-v4_7_0.scss';
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../../bower_components/font-awesome/scss/font-awesome.scss';
 
+/* utilities classes */
 
+
+/* layout */
+
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+.full-width {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* layout - tiles */
+.tiles {
+    > div > div {
+        border-radius: $border-radius;
+        padding: $grid-gutter-width;
+        height: 100%;
+        position: relative;
+        @include clearfix;
+    }
+
+    .title,
+    .byline {
+        display: block;
+    }
+
+    .title {
+        font-size: .75rem;
+    }
+
+    .byline {
+        color: $text-color-secondary;
+    }
+    .badge {
+        float: right;
+        background-color: $bg-color-primary;
+    }
+}
+
+.tiles--primary {
+    > div > div {
+        background-color: $bg-color-primary;
+    }
+}
+
+.tiles--secondary {
+    > div > div {
+        background-color: $bg-color-secondary;
+        @include clearfix;
+    }
+}
+
+.tiles--ranking {
+    .title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    // increase specificity
+    .title.title {
+        font-weight: $font-weight-normal;
+    }
+    .title,
+    .byline {
+        display: inline;
+        vertical-align: baseline;
+    }
+}
+
+/* chart tabs */
+.chart-tabs {
+    .nav-link:not(.active) {
+        color: $text-color-secondary;
+
+        &:hover,
+        &:focus {
+            color: $text-color-primary;
+        }
+    }
+}
+
+.chart-tabs__content {
+    background-color: $bg-color-secondary;
+
+    .tab-content {
+        padding: ($grid-gutter-width * 2) ($grid-gutter-width / 2);
+    }
+
+    .title {
+        font-weight: $font-weight-bold;
+    }
+
+    .fa-stack {
+        position: absolute;
+        right: $grid-gutter-width;
+        color: $text-color-secondary;
+    }
+}
+
+
+/* chart social */
+// TODO replace .panel by .card
+.chart-social {
+    background-color: $bg-color-third;
+
+    .panel-group {
+        padding: ($grid-gutter-width * 2) ($grid-gutter-width / 2);
+    }
+
+    .panel {
+        padding: ($grid-gutter-width / 2) 0;
+        background-color: $bg-color-primary;
+        border-radius: $border-radius;
+        margin-bottom: 1px;
+
+        .row {
+            margin: 0;
+            align-items: center;
+        }
+    }
+
+    .panel-title {
+        :not(.message) {
+            flex: 0 1 0;
+        }
+
+        .message {
+            .fa,
+            span {
+                color: $text-color-secondary;
+            }
+        }
+
+        .link,
+        .buttons {
+            white-space: nowrap;
+        }
+    }
+}
+
+/* typography */
+.btn-primary {
+    color: $text-color-inverse;
+
+    &:hover,
+    &:focus {
+        color: $text-color-inverse;;
+    }
+}
+
+h1 small {
+    font-size: $font-size-base;
+    text-transform: uppercase;
+    color: $text-color-secondary;
+}
 
 /* icon */
 .fa-stack {
@@ -40,6 +193,10 @@ $bg-color-third: rgba(241, 243, 243, 1);
 
     .bg-for-fa-btc {
         color: $icon-color-bitcoin;
+    }
+
+    .fa-btc {
+        transform: rotate(-20deg);
     }
 }
 
@@ -117,5 +274,11 @@ $bg-color-third: rgba(241, 243, 243, 1);
 header {
     h1 {
         display: inline;
+    }
+    .col > * {
+        vertical-align: middle;
+    }
+    .fa-stack {
+        vertical-align: -1rem;
     }
 }

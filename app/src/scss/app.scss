@@ -18,9 +18,7 @@ $bg-color-secondary: darken(rgba(248, 249, 249, 1), 0%);  // TODO remove darken
 $bg-color-third: darken(rgba(241, 243, 243, 1), 0%);  // TODO remove darken
 
 @import 'bootstrap-variables-v4_0_0-beta_2.scss';
-@import 'font-awesome-variables-v4_7_0.scss';
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../../../bower_components/font-awesome/scss/font-awesome.scss';
 
 /* utilities classes */
 

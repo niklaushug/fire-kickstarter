@@ -1,12 +1,12 @@
-let svg = d3.select('svg')
+let svg = d3.select('svg.chart')
 
 const margin = {
-      top: 0,
-      right: 0,
-      bottom: 30,
-      left: 40},
-    width = +svg.attr('width') - margin.left - margin.right,
-    height = +svg.attr('height') - margin.top - margin.bottom,
+      top: 30,
+      right: 8,
+      bottom: 80,
+      left: 8},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom,
     //timeFormat = d3.timeFormat('%d. %b %Y %H:%M'),
     timeFormat = d3.timeFormat('%H:%M');
 
@@ -37,9 +37,7 @@ d3.tsv('js/data999.tsv', (d) => {
 }, (error, data) => {
   if (error) throw error;
 
-  let yAxisSafeArea = (maxPrice(data) - minPrice(data)) / 10;
-
-  xBar.domain(data.map((d) => {return d.time}));
+  let yAxisSafeArea = (maxPrice(data) - minPrice(data)) * 0.1;
 
   yAxis.domain([minPrice(data) - yAxisSafeArea, maxPrice(data) + yAxisSafeArea]);
   xAxis.domain(d3.extent(data, (d) => {return d.time}));
@@ -49,11 +47,54 @@ d3.tsv('js/data999.tsv', (d) => {
   g.append('g')
       .attr('class', 'axis axis--x')
       .attr('transform', `translate(0, ${height})`)
-      .call(d3.axisBottom(xAxis).tickFormat(timeFormat));
+      .call(d3.axisBottom(xAxis)
+        .ticks(12)
+        .tickFormat(timeFormat)
+      );
+
+  g.append('g')
+    .attr('class', 'steamgraph')
+    .append('path')
+    .attr('d', area(data));
+
+  g.append("g")
+      .attr("class", "grid grid--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(xAxis)
+          .ticks(8)
+          .tickSize(-height)
+          .tickFormat("")
+      );
+
+  g.append("g")
+      .attr("class", "grid grid--y")
+      .call(d3.axisLeft(yAxis)
+          .ticks(4)
+          .tickSize(-width)
+          .tickFormat("")
+      );
 
   g.append('g')
       .attr('class', 'axis axis--y')
-      .call(d3.axisLeft(yAxis));
+      .attr('transform', `translate(${width - 30}, -10)`)
+      .call(d3.axisRight(yAxis)
+        .ticks(4)
+      );
+});
+
+d3.tsv('js/data50.tsv', (d) => {
+  d.timestamp = +d.timestamp;
+  d.time = new Date(d.timestamp * 1000);
+  d.price = +d.price;
+  d.volume = +d.volume;
+  return d;
+}, (error, data) => {
+  if (error) throw error;
+
+  let yAxisSafeArea = (maxPrice(data) - minPrice(data)) * 4;
+
+  xBar.domain(data.map((d) => {return d.time}));
+  yAxis.domain([minPrice(data), maxPrice(data) + yAxisSafeArea]);
 
   g.append('g')
     .attr('class', 'bar')
@@ -64,10 +105,4 @@ d3.tsv('js/data999.tsv', (d) => {
       .attr('y', function(d) {return yAxis(d.price)})
       .attr('width', xBar.bandwidth())
       .attr('height', function(d) {return height - yAxis(d.price)});
-
-  g.append('g')
-    .attr('class', 'steamgraph')
-    .append('path')
-    .attr('d', area(data))
-    .attr('fill', 'red');
 });

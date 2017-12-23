@@ -248,6 +248,10 @@ h1 small {
         }
     }
 
+    .axis--y .tick line {
+        display: none;
+    }
+
     .grid {
         line {
             stroke: $text-color-secondary;
@@ -257,6 +261,10 @@ h1 small {
 
         text {
             fill: $body-color;
+        }
+
+        .domain {
+            display: none;
         }
     }
 

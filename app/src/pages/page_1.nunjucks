@@ -5,7 +5,7 @@
         <br>
         <br>
         <div class="chart-wrapper">
-            <svg class="chart" viewBox="0 0 960 500">
+            <svg class="chart-mockup" viewBox="0 0 960 500">
                 <g class="axis axis--x" transform="translate(0,450)">
                     <g class="tick" opacity="1" transform="translate(25.5,0)">
                         <line y2="6"></line>

@@ -1,5 +1,65 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
+<div class="row" style="font-size: 12px;"><div class="col-md-8 col-lg-6">
+<h2>Kursdaten konsolidieren</h2>
+<p>Viele Datenpunkte sorgen für eine hohe Auflösung. Wenn ein breiter Zeitraum dargestellt wird
+ (z.B. Monat oder Jahr) sind mehr Datenpunkte vorhanden, als überhaupt vom Menschen wahrgenommen werden können.
+Im Sinne der Performance sind die "überflüssigen" Datenpunkten zusammenzufassen.</p>
+<p>Auch für einzelne Visualisierungen ist die Konsolidierung von Daten gewünscht. So können Nutzer
+die Daten besser erfassen und interpretieren. In <a style="color: blue;" href="/app/dist/page_3.html">diesem Beispiel</a> werden z.B. die Daten für die Bar Chart konsolidiert.</p>
+<p>Der folgende Code zeigt einen Konsolidierungsansatz mittels Javascript. Ein Array von Daten wird in eine definierte Anzahl von Chunks aufgeteilt. Für jeden Chunk wird dann der Durchschnittswert berrechnet.</p>
+<p>Diese Berechnungen werden auf jedem Browser bei jedem Ladevorgang wiederholt. Sinnvoller wäre es, diese Berechnungen im Backend auszuführen. Am Besten werden die Daten bereits bei der Datenbankabfrage entsprechend aufbereitet.</p>
+<p>Das folgende Script wird auf dieser Page ausgeführt und schreibt mittels console.log() in die Konsole des Browsers.</p>
+<pre>
+    let arr1 = [2, 4, 7, 20, 21, 23];
+    let arr2 = Array(1001).fill().map((_, i) => i);
+    let chunks = [];
 
+    const chunk = function(arr, maxChunks=20) {
+      let chunkSize = Math.ceil(arr.length / maxChunks);
+      let newArr = [];
+      for (let i = 0; i < maxChunks; i++) {
+        newArr.push(arr.splice(0, chunkSize));
+      }
+      return newArr;
+    }
+
+    const getAverageInArray = function(arr) {
+      return arr.reduce(function(acc, val) {
+        return acc + val
+      }, 0) / arr.length
+    }
+
+    chunks = chunk(arr2, 10)
+    chunks.forEach((arr) => {
+      console.log(getAverageInArray(arr));
+    })
+</pre>
+<script>
+    let arr1 = [2, 4, 7, 20, 21, 23];
+    let arr2 = Array(1001).fill().map((_, i) => i);
+    let chunks = [];
+
+    const chunk = function(arr, maxChunks=20) {
+      let chunkSize = Math.ceil(arr.length / maxChunks);
+      let newArr = [];
+      for (let i = 0; i < maxChunks; i++) {
+        newArr.push(arr.splice(0, chunkSize));
+      }
+      return newArr;
+    }
+
+    const getAverageInArray = function(arr) {
+      return arr.reduce(function(acc, val) {
+        return acc + val
+      }, 0) / arr.length
+    }
+
+    chunks = chunk(arr2, 10)
+    chunks.forEach((arr) => {
+      console.log(getAverageInArray(arr));
+    })
+</script>
+</div></div>
 {% endblock %}
